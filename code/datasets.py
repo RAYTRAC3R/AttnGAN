@@ -147,7 +147,7 @@ class TextDataset(data.Dataset):
         for i in range(len(filenames)):
             cap_path = '%s/text/%s.txt' % (data_dir, filenames[i])
             with open(cap_path, "r") as f:
-                captions = f.read().decode('utf8').split('\n')
+                captions = f.read().encode().decode('utf8').split('\n')
                 cnt = 0
                 for cap in captions:
                     if len(cap) == 0:
@@ -302,9 +302,9 @@ class TextDataset(data.Dataset):
         imgs = get_imgs(img_name, self.imsize,
                         bbox, self.transform, normalize=self.norm)
         # random select a sentence
-        sent_ix = random.randint(0, self.embeddings_num)
+        sent_ix = random.randint(0, 2)
         new_sent_ix = index * self.embeddings_num + sent_ix
-        caps, cap_len = self.get_caption(new_sent_ix)
+        caps, cap_len = self.get_caption(sent_ix)
         return imgs, caps, cap_len, cls_id, key
 
 
