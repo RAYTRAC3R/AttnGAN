@@ -32,7 +32,7 @@ def drawCaption(convas, captions, ixtoword, vis_size, off1=2, off2=2):
     img_txt = Image.fromarray(convas)
     # get a font
     # fnt = None  # ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
-    fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
+    fnt = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf', 50)
     # get a drawing context
     d = ImageDraw.Draw(img_txt)
     sentence_list = []
@@ -144,7 +144,7 @@ def build_super_images(real_imgs, captions, ixtoword,
                 one_map *= 255
                 #
                 PIL_im = Image.fromarray(np.uint8(img))
-                PIL_att = Image.fromarray(np.uint8(one_map))
+                PIL_att = Image.fromarray((np.uint8(one_map) * 255).astype(np.uint8))
                 merged = \
                     Image.new('RGBA', (vis_size, vis_size), (0, 0, 0, 0))
                 mask = Image.new('L', (vis_size, vis_size), (210))
