@@ -10,9 +10,9 @@ __C = edict()
 cfg = __C
 
 # Dataset name: flowers, birds
-__C.DATASET_NAME = 'birds'
+__C.DATASET_NAME = 'bfdimlp'
 __C.CONFIG_NAME = ''
-__C.DATA_DIR = ''
+__C.DATA_DIR = '/content/AttnGAN/data/bfdimlp'
 __C.GPU_ID = 0
 __C.CUDA = True
 __C.WORKERS = 6
@@ -27,7 +27,7 @@ __C.TREE.BASE_SIZE = 64
 
 # Training options
 __C.TRAIN = edict()
-__C.TRAIN.BATCH_SIZE = 64
+__C.TRAIN.BATCH_SIZE = 12
 __C.TRAIN.MAX_EPOCH = 600
 __C.TRAIN.SNAPSHOT_INTERVAL = 2000
 __C.TRAIN.DISCRIMINATOR_LR = 2e-4
@@ -35,7 +35,7 @@ __C.TRAIN.GENERATOR_LR = 2e-4
 __C.TRAIN.ENCODER_LR = 2e-4
 __C.TRAIN.RNN_GRAD_CLIP = 0.25
 __C.TRAIN.FLAG = True
-__C.TRAIN.NET_E = ''
+__C.TRAIN.NET_E = '/content/AttnGAN/output/bfdimlp__2021_02_27_00_27_44/Model/text_encoder0.pth'
 __C.TRAIN.NET_G = ''
 __C.TRAIN.B_NET_D = True
 
