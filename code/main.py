@@ -85,8 +85,8 @@ def gen_example(wordtoix, algo):
 
 if __name__ == "__main__":
     args = parse_args()
-    if args.cfg_file is not None:
-        cfg_from_file(args.cfg_file)
+    #if args.cfg_file is not None:
+    #    cfg_from_file(args.cfg_file)
 
     if args.gpu_id != -1:
         cfg.GPU_ID = args.gpu_id
